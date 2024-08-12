@@ -9,3 +9,39 @@ body {
 .isActive {
     color: #06a055 !important;
 }
+
+/* category css */
+.react-tabs {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .react-tabs__tab-list {
+    border-bottom: 1px solid #06a055;
+    margin: 0 0 10px;
+    padding: 0;
+  }
+  
+  .react-tabs__tab {
+    background:#06a055;
+    color: white;
+    display: inline-block;
+    position: relative;
+    list-style: none;
+    padding: 14px 24px;
+    cursor: pointer;
+  }
+  
+  .react-tabs__tab--selected {
+    border: 1px solid #3f3f3f !important;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .react-tabs__tab-panel {
+    display: none;
+  }
+  
+  .react-tabs__tab-panel--selected {
+    display: block;
+  }
