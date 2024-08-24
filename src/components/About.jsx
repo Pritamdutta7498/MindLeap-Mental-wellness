@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import thumbnailImg from "../assets/video-thumbnail.webp";
 import { IoPlayOutline } from "react-icons/io5";
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
+import { AiOutlineClose } from "react-icons/ai";
 const About = () => {
   const [isVideoPlaying, setVideoPlaying] = useState(false);
 
@@ -39,7 +40,7 @@ const About = () => {
                   <iframe
                     width="560"
                     height="315"
-                    src="https://www.youtube.com/embed/mKamWo97xec?si=gNkDDY8UArJqt4gX"
+                    src="https://www.youtube.com/embed/NQcYZplTXnQ?si=nP5TMOPvRW-_J06T"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -50,7 +51,7 @@ const About = () => {
                     onClick={handleCloseVideo}
                     className="absolute top-4 right-4 text-white text-2xl cursor-pointer"
                   >
-                    X
+                    <AiOutlineClose className="text-white text-4xl " />
                   </button>
                 </div>
               </div>
