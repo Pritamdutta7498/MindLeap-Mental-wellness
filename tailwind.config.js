@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      backgroundImage:{
+        "workingImg":"url('/work-process.webp')"
+      },
       colors: {
         heroBg: "#0e1122",
         para: "rgb(0 0 0 / 80%)",

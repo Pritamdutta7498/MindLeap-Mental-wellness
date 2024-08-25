@@ -4,10 +4,10 @@ import Services from "./components/Services";
 import About from "./components/About";
 
 import "./App.css";
-import { DiHeroku } from "react-icons/di";
 import Hero from "./components/Hero";
 import Pricing from "./components/Pricing";
 import Testimonial from "./components/Testimonial";
+import { WorkingStep } from "./components/WorkingStep";
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
       <Hero />
       <Services />
       <About />
+      <WorkingStep/>
       <Pricing/>
       <Testimonial/>
     </div>
