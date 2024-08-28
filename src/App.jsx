@@ -8,6 +8,7 @@ import Hero from "./components/Hero";
 import Pricing from "./components/Pricing";
 import Testimonial from "./components/Testimonial";
 import { WorkingStep } from "./components/WorkingStep";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <WorkingStep/>
       <Pricing/>
       <Testimonial/>
+      <Contact/>
     </div>
   );
 }
