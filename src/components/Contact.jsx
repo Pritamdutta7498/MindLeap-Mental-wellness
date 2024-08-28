@@ -5,11 +5,37 @@ import { PiCaretCircleDoubleUpBold } from "react-icons/pi";
 import { FaClinicMedical } from "react-icons/fa";
 
 const Contact = () => {
-  
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [country, setCountry] = useState("");
+  const [message, setMessage] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
-  const handleSubmit = e =>{
+  const resetForm = () => {
+    setName("");
+    setEmail("");
+    setPhone("");
+    setCountry("");
+    setMessage("");
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-  }
+    const data = { name, email, phone, country, message };
+    // console.log(data);
+    if (!data) {
+      alert("Please fill out all fields");
+      return;
+    }
+    setShowModal(true);
+    resetForm();
+  };
+  const closeModal = () => {
+    setShowModal(false);
+    resetForm();
+  };
+
   return (
     <div
       id="contact"
@@ -75,11 +101,15 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-8">
               <div className="flex sm:flex-row flex-col gap-4">
                 <input
+                  onChange={(e) => setName(e.target.value)}
                   type="text"
+                  value={name}
                   placeholder="Name"
                   className="w-full p-4 rounded-md focus:outline-none focus:ring-2 focus:ring-primary shadow"
                 />
                 <input
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
                   type="email"
                   placeholder="Email Address"
                   className="w-full p-4 rounded-md focus:outline-none focus:ring-2 focus:ring-primary shadow"
@@ -87,26 +117,54 @@ const Contact = () => {
               </div>
               <div className="flex sm:flex-row flex-col gap-4">
                 <input
-                  type="tel"
+                  onChange={(e) => setPhone(e.target.value)}
+                  value={phone}
+                  type="number"
                   placeholder="Contact Number"
                   className="w-full p-4 rounded-md focus:outline-none focus:ring-2 focus:ring-primary shadow"
                 />
                 <input
+                  onChange={(e) => setCountry(e.target.value)}
+                  value={country}
                   type="text"
                   placeholder="Country"
                   className="w-full p-4 rounded-md focus:outline-none focus:ring-2 focus:ring-primary shadow"
                 />
               </div>
               <textarea
+                onChange={(e) => setMessage(e.target.value)}
+                value={message}
                 className="w-full p-4 rounded-md focus:outline-none focus:ring-2 focus:ring-primary shadow"
                 rows="5"
                 placeholder="Write your message..."
               ></textarea>
-              <button type="submit" className="w-full p-3 bg-primary text-white rounded-md hover:bg-primary/80">Send Message</button>
+              <button
+                type="submit"
+                className="w-full p-3 bg-primary text-white rounded-md hover:bg-primary/80"
+              >
+                Send Message
+              </button>
             </form>
           </div>
         </div>
       </div>
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90">
+          <div className="bg-white p-8 rounded-md shadow-lg">
+            <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
+            <p>
+              Thank You <span className=" text-primary">{name}</span>, for
+              submiting your query.
+            </p>
+            <button
+              onClick={closeModal}
+              className="mt-4 px-4 py-2 bg-primary text-white rounded-md"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
