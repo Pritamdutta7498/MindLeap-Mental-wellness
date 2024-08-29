@@ -4,12 +4,20 @@ import serviceImg1 from "../assets/service1.webp";
 import serviceImg2 from "../assets/service2.webp";
 import serviceImg3 from "../assets/service3.webp";
 import serviceImg4 from "../assets/service4.webp";
+import { motion } from "framer-motion";
+import { fadeIn } from "../utilities/animationVarients";
 
 const Services = () => {
   return (
     <div id="services" className="bg-[#f7f8fc]">
       <div className="pt-28 px-4 container mx-auto">
-        <div className="text-center space-y-5">
+        <motion.div
+          variants={fadeIn("up", 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+          className="text-center space-y-5"
+        >
           <h2 className="text-4xl font-bold font-secondary text-heroBg">
             What Can We Do Together
           </h2>
@@ -17,20 +25,32 @@ const Services = () => {
             Our counseling services are available online, making it easy for you
             to access the help you need from the comfort of your home.
           </p>
-        </div>
+        </motion.div>
         {/* service category */}
         <div className="py-12 md:w-4/5 mx-auto">
           <Tabs>
-            <TabList className="flex flex-wrap justify-between items-center md:gap-8 gap-4">
+            <motion.TabList
+              variants={fadeIn("up", 0.2)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.7 }}
+              className="flex flex-wrap justify-between items-center md:gap-8 gap-4"
+            >
               <Tab>Couple Counseling</Tab>
               <Tab>Parenting Skill</Tab>
               <Tab>Felling Stuck</Tab>
               <Tab>Self Confidence</Tab>
-            </TabList>
+            </motion.TabList>
 
             <TabPanel>
               <div className="flex flex-col md:flex-row gap-8 mt-8">
-                <div className="md:w-1/2 bg-white rounded-lg p-12 font-secondary">
+                <motion.div
+                  variants={fadeIn("right", 0.2)}
+                  initial="hidden"
+                  whileInView={"show"}
+                  viewport={{ once: false, amount: 0.7 }}
+                  className="md:w-1/2 bg-white rounded-lg p-12 font-secondary"
+                >
                   <h2 className="text-3xl font-semibold text-primary mb-4">
                     Couple Counseling
                   </h2>
@@ -49,19 +69,31 @@ const Services = () => {
                     <li>Understanding RelationShip Dynamics</li>
                     <li>Understanding RelationShip Dynamics</li>
                   </ul>
-                </div>
-                <div className="md:w-1/2">
+                </motion.div>
+                <motion.div
+                  variants={fadeIn("left", 0.2)}
+                  initial="hidden"
+                  whileInView={"show"}
+                  viewport={{ once: false, amount: 0.7 }}
+                  className="md:w-1/2"
+                >
                   <img
                     src={serviceImg1}
                     alt="service img"
                     className="w-full h-[450px] rounded-2xl object-cover"
                   />
-                </div>
+                </motion.div>
               </div>
             </TabPanel>
             <TabPanel>
               <div className="flex flex-col md:flex-row gap-8 mt-8">
-                <div className="md:w-1/2 bg-white rounded-lg p-12 font-secondary">
+                <motion.div
+                  variants={fadeIn("right", 0.2)}
+                  initial="hidden"
+                  whileInView={"show"}
+                  viewport={{ once: false, amount: 0.7 }}
+                  className="md:w-1/2 bg-white rounded-lg p-12 font-secondary"
+                >
                   <h2 className="text-3xl font-semibold text-primary mb-4">
                     Parenting Skill
                   </h2>
@@ -78,19 +110,30 @@ const Services = () => {
                     <li>Understanding RelationShip Dynamics</li>
                     <li>Understanding RelationShip Dynamics</li>
                   </ul>
-                </div>
-                <div className="md:w-1/2">
+                </motion.div>
+                <motion.div
+                  variants={fadeIn("left", 0.2)}
+                  initial="hidden"
+                  whileInView={"show"}
+                  viewport={{ once: false, amount: 0.7 }}
+                 className="md:w-1/2">
                   <img
                     src={serviceImg2}
                     alt="service img"
                     className="w-full h-[450px] rounded-2xl object-cover"
                   />
-                </div>
+                </motion.div>
               </div>
             </TabPanel>
             <TabPanel>
               <div className="flex flex-col md:flex-row gap-8 mt-8">
-                <div className="md:w-1/2 bg-white rounded-lg p-12 font-secondary">
+                <motion.div
+                  variants={fadeIn("right", 0.2)}
+                  initial="hidden"
+                  whileInView={"show"}
+                  viewport={{ once: false, amount: 0.7 }}
+                
+                className="md:w-1/2 bg-white rounded-lg p-12 font-secondary">
                   <h2 className="text-3xl font-semibold text-primary mb-4">
                     Feeling Stuck
                   </h2>
@@ -110,19 +153,30 @@ const Services = () => {
                     <li>Understanding RelationShip Dynamics</li>
                     <li>Understanding RelationShip Dynamics</li>
                   </ul>
-                </div>
-                <div className="md:w-1/2">
+                </motion.div>
+                <motion.div
+                  variants={fadeIn("left", 0.2)}
+                  initial="hidden"
+                  whileInView={"show"}
+                  viewport={{ once: false, amount: 0.7 }}
+                
+                className="md:w-1/2">
                   <img
                     src={serviceImg3}
                     alt="service img"
                     className="w-full h-[450px] rounded-2xl object-cover"
                   />
-                </div>
+                </motion.div>
               </div>
             </TabPanel>
             <TabPanel>
               <div className="flex flex-col md:flex-row gap-8 mt-8">
-                <div className="md:w-1/2 bg-white rounded-lg p-12 font-secondary">
+                <motion.div
+                  variants={fadeIn("right", 0.2)}
+                  initial="hidden"
+                  whileInView={"show"}
+                  viewport={{ once: false, amount: 0.7 }}
+                 className="md:w-1/2 bg-white rounded-lg p-12 font-secondary">
                   <h2 className="text-3xl font-semibold text-primary mb-4">
                     Self Confidence
                   </h2>
@@ -141,14 +195,19 @@ const Services = () => {
                     <li>Understanding RelationShip Dynamics</li>
                     <li>Understanding RelationShip Dynamics</li>
                   </ul>
-                </div>
-                <div className="md:w-1/2">
+                </motion.div>
+                <motion.div
+                  variants={fadeIn("left", 0.2)}
+                  initial="hidden"
+                  whileInView={"show"}
+                  viewport={{ once: false, amount: 0.7 }}
+                className="md:w-1/2">
                   <img
                     src={serviceImg4}
                     alt="service img"
                     className="w-full h-[450px] rounded-2xl object-cover"
                   />
-                </div>
+                </motion.div>
               </div>
             </TabPanel>
           </Tabs>

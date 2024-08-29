@@ -3,6 +3,8 @@ import thumbnailImg from "../assets/video-thumbnail.webp";
 import { IoPlayOutline } from "react-icons/io5";
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
 import { AiOutlineClose } from "react-icons/ai";
+import { motion } from "framer-motion";
+import { fadeIn } from "../utilities/animationVarients";
 const About = () => {
   const [isVideoPlaying, setVideoPlaying] = useState(false);
 
@@ -17,7 +19,12 @@ const About = () => {
       <div className="container mx-auto ">
         <div className="py-12 px-4 md:w-4/5 mx-auto flex flex-col md:flex-row items-center gap-8 ">
           {/* left side */}
-          <div className="md:w-1/2 w-full mb-8 md:mb-0">
+          <motion.div
+          variants={fadeIn('up', 0.2)}
+          initial="hidden"
+          whileInView={'show'}
+          viewport={{once: false, amount: 0.7}}
+           className="md:w-1/2 w-full mb-8 md:mb-0">
             {!isVideoPlaying ? (
               <div className="relative">
                 <img
@@ -56,9 +63,14 @@ const About = () => {
                 </div>
               </div>
             )}
-          </div>
+          </motion.div>
           {/* right side */}
-          <div className="md:w-1/2 w-full">
+          <motion.div
+          variants={fadeIn('down', 0.2)}
+          initial="hidden"
+          whileInView={'show'}
+          viewport={{once: false, amount: 0.7}}
+           className="md:w-1/2 w-full">
             <h2 className="text-3xl font-secondary font-bold mb-4  leading-snug">
               Individual Consult and Therapy
             </h2>
@@ -74,7 +86,7 @@ const About = () => {
                 <IoArrowForwardCircleSharp />
               </a>
             </button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

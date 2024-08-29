@@ -4,6 +4,8 @@ import React from "react";
 import img1 from "../assets/review1.webp"
 import img2 from "../assets/review2.webp"
 import { BsChatRightQuote } from "react-icons/bs";
+import { motion } from "framer-motion";
+import { fadeIn } from "../utilities/animationVarients";
 
 const testimonials = [
   {
@@ -25,8 +27,13 @@ const testimonials = [
 const Testimonial = () => {
   return (
     <div id="testimonial" className="bg-[#f7f8fc] py-12">
-      <div className="container mx-auto pb-20">
-        <div className="text-center mb-12">
+      <div className="container mx-auto py-20">
+        <motion.div
+        variants={fadeIn('up', 0.2)}
+        initial="hidden"
+        whileInView={'show'}
+        viewport={{once: false, amount: 0.7}}
+        className="text-center mb-12">
           <h2 className="text-4xl font-bold font-secondary mb-3">
             What Our Clients Say About Us
           </h2>
@@ -34,8 +41,13 @@ const Testimonial = () => {
             Our counseling services are available online, making it easy for you
             to access the help you need from the comfort of your home.
           </p>
-        </div>
-        <div className="flex flex-col md:w-4/5 mx-auto md:flex-row md:gap-12 gap-8">
+        </motion.div>
+        <motion.div
+        variants={fadeIn('up', 0.3)}
+        initial="hidden"
+        whileInView={'show'}
+        viewport={{once: false, amount: 0.7}}
+        className="flex flex-col md:w-4/5 mx-auto md:flex-row md:gap-12 gap-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
@@ -56,7 +68,7 @@ const Testimonial = () => {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
